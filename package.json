@@ -1,0 +1,25 @@
+{
+    "name": "lambda-notes-revisited",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon /src/index.js --ext js graphql --exec babel-node",
+        "debug": "nodemon /src/index.js --exec babel-node --inspect",
+        "get-schema": "graphql get-schema -p prismarb"
+    },
+    "repository": "https://github.com/ryanboris/lambda-notes-revisited.git",
+    "author": "ryanboris <ryan.boris@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "graphql-cli": "^3.0.3",
+        "graphql-yoga": "^1.16.9",
+        "prisma-binding": "^2.2.12",
+        "uuid": "^3.3.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.9"
+    }
+}
