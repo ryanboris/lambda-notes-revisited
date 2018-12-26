@@ -5,7 +5,7 @@ import Subscription from './Resolvers/Subscription'
 import prisma from './prisma'
 
 const server = new GraphQLServer({
-    typeDefs: './src/schema.graphql',
+    typeDefs: './schema.graphql',
     resolvers: {
         Query,
         Mutation,
@@ -17,7 +17,5 @@ const server = new GraphQLServer({
 })
 
 server.start(() => {
-    console.log(
-        'GraphQL Playground and Server Connected at http://localhost:4000'
-    )
+    console.log('GraphQL Playground and Server Connected')
 })

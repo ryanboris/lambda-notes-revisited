@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon /src/index.js --ext js graphql --exec babel-node",
-        "debug": "nodemon /src/index.js --exec babel-node --inspect",
+        "start": "nodemon src/index.js --ext js graphql --exec babel-node",
+        "debug": "nodemon src/index.js --exec babel-node --inspect",
         "get-schema": "graphql get-schema -p prisma"
     },
     "repository": "https://github.com/ryanboris/lambda-notes-revisited.git",
