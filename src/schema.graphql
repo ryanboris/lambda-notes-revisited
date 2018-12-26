@@ -1,0 +1,64 @@
+type Query {
+    users(query: String): [User!]!
+    notes(query: String): [Note!]!
+    user: User!
+    note: Note!
+}
+
+type Mutation {
+    createUser(data: CreateUserInput!): User!
+    deleteUser(id: ID!): User!
+    updateUser(id: ID!, data: UpdateUserInput): User!
+    createNote(data: CreateNoteInput!): Note!
+    deleteNote(id: ID!): Note!
+    updateNote(id: ID!, data: UpdateNoteInput): Note!
+}
+
+input CreateUserInput {
+    name: String!
+    username: String!
+    email: String!
+}
+
+input UpdateUserInput {
+    name: String
+    email: String
+}
+
+input CreateNoteInput {
+    title: String!
+    body: String!
+    boolean: String!
+    author: ID!
+}
+
+input UpdateNoteInput {
+    title: String
+    body: String
+    boolean: String
+}
+
+type Subscription {
+    note: NoteSubscriptionPayload!
+}
+
+type NoteSubscriptionPayload {
+    mutation: MutationType!
+    data: Note!
+}
+
+type User {
+    id: ID!
+    name: String!
+    username: String!
+    email: String!
+    notes: [Notes!]!
+}
+
+type Note {
+    id: ID!
+    title: String!
+    body: String!
+    published: Boolean!
+    author: User!
+}
