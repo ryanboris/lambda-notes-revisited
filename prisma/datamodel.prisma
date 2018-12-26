@@ -1,0 +1,15 @@
+type User {
+    id: ID! @unique
+    name: String!
+    username: String!
+    email: String!
+    notes: [Note!]! @relation(name: "NoteToUser", onDelete: CASCADE)
+}
+
+type Note {
+    id: ID! @unique
+    title: String!
+    body: String!
+    published: Boolean!
+    author: User! @relation(name: "NoteToUser", onDelete: SET_NULL)
+}
